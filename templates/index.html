@@ -1,0 +1,105 @@
+{% extends "base.html" %} {% block content %}
+<div class="box container">
+  <br />
+  <div class="h-100 d-flex align-items-center justify-content-around">
+    <div
+      class="col-6 center-block text-center pb-2"
+      style="border-bottom: 2px #f44b00 solid"
+    >
+      <h3 class="mx-auto" style="color: #f44b00">Alphabet</h3>
+    </div>
+    <a
+      href="{{ url_for('kata') }}"
+      class="col-6 text-center"
+      style="text-decoration: none; color: black"
+    >
+      <h3 class="mx-auto">Kata</h3>
+    </a>
+  </div>
+  <br />
+  <div class="row gx-5">
+    <div class="col-xl-5 col-md-12 grid-margin stretch-card">
+      <div class="row">
+        <div class="col-12 grid-margin stretch-card">
+          <img src="{{ url_for('video_feed') }}" style="width: 100%" />
+        </div>
+        <div class="col-12 my-3 d-flex justify-content-around">
+          <button
+            type="button"
+            class="btn-play btn-circle btn-xl"
+            id="startPredicting"
+            onclick="startPredicting()"
+            style="border: none; background-color: white"
+          >
+            <img
+              src="{{ url_for('static' , filename='img/icon/play.png') }}"
+              alt=""
+            />
+          </button>
+          <button
+            type="button"
+            class="btn-stop btn-circle btn-xl"
+            id="stopPredicting"
+            onclick="stopPredicting()"
+            style="border: none; background-color: white"
+          >
+            <img
+              src="{{ url_for('static' , filename='img/icon/stop.png') }}"
+              alt=""
+              style="border: none"
+            />
+          </button>
+        </div>
+        <!-- <div class="col-12 grid-margin stretch-card">
+          <div class="card my-3">
+            <div class="card-body">
+              <h4>{!! trans('home.predictionResults') !!}</h4>
+              <h4 id="prediction">-</h4>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <div
+      class="col-md-12 col-xl-7 grid-margin stretch-card d-flex flex-column justify-content-around"
+    >
+      <div class="row border rounded border-success p-1">
+        <div class="col-2 my-auto">
+          <img
+            src="{{ url_for('static',filename='img/icon/icon1.png') }}"
+            style="width: 40px; height: 40px"
+            alt=""
+          />
+        </div>
+        <div class="col-8">
+          <p>Mulai Prediksi</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui
+            purus, porttitor ut ornare finibus, vehicula et lectus. Phasellus eu
+            hendrerit nisl.
+          </p>
+        </div>
+      </div>
+      <div class="row mt-2 p-1">
+        <div class="col-2 my-auto">
+          <img
+            src="{{ url_for('static',filename='img/icon/icon3.png') }}"
+            style="width: 40px; height: 40px"
+            alt=""
+          />
+        </div>
+        <div class="col-10">
+          <p>Hentikan Prediksi</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui
+            purus, porttitor ut ornare finibus, vehicula et lectus. Phasellus eu
+            hendrerit nisl.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+</div>
+
+{% endblock %}
