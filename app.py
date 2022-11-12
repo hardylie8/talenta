@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # from flask_session import Session
-from flask import Flask, render_template, Response, session
+from flask import Flask, render_template, Response
 import io
 import cv2
 import mediapipe as mp
@@ -9,7 +9,7 @@ import jyserver.Flask as jsf
 from datetime import timedelta
 from tensorflow import keras
 from keras.models import load_model
-from flask_bootstrap import Bootstrap
+# from flask_bootstrap import Bootstrap
 
 vc = cv2.VideoCapture(0)
 hand_found = True
@@ -23,7 +23,6 @@ app = Flask(__name__)
 app.permanent_session_lifetime = timedelta(minutes=5)
 savedModel = load_model('model/benar6_10.h5')
 holModel = load_model('model/KATA_benar7_10.h5')
-# bootstrap = Bootstrap(app)
 
 
 @app.route('/kata')
