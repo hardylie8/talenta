@@ -2,3 +2,4 @@ Flask
 opencv-python
 opencv-contrib-python
 mediapipe
+gunicorn==20.0.4
